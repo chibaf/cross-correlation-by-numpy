@@ -3,6 +3,8 @@ use numpy implementation for cross correlation
 
 signals.csv: test data which contains two columns of signals
 
+plot_csv.py: make graph of signals.csv
+
 cross-correlation-numpy.py: computing cross-correlation with rotations
 
 cross-correlation-fft.py: computing cross-correlation with fft
