@@ -14,7 +14,10 @@ m=np.loadtxt(sys.argv[1],delimiter=',')  # convert a csv file to a matrix from f
 mt=m.T #transpose matrix
 
 #computing cross-correlation by shift
-v1=mt[0];v2=mt[1]
+if len(mt)==2:
+  v1=mt[0];v2=mt[1];
+else:
+  v1=mt[1];v2=mt[2]; 
 c=1.0/(np.linalg.norm(v1)*np.linalg.norm(v2))
 corr=np.empty(0)   #make nd.array of length zero
 corr=np.append(corr,np.dot(v1,v2)*c)  
@@ -22,6 +25,7 @@ d1=v1;d2=v2
 for i in range(len(v1)):
   d2=np.roll(d2,1)  # shift 1 to the left
   corr=np.append(corr,np.dot(d1,d2)*c) 
+np.savetxt(sys.argv[2],corr,delimiter=',')
 #find max
 print(np.amax(corr))
 print(find_index(corr))
