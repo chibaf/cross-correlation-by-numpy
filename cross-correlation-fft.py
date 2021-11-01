@@ -17,6 +17,8 @@ mt=m.T #transpose matrix
 v1=mt[0];v2=mt[1];
 c=1.0/(np.linalg.norm(v1)*np.linalg.norm(v2)) 
 corr=np.real(np.fft.ifft(np.fft.fft(v1)*np.conjugate(np.fft.fft(v2))))*c
+
+np.savetxt(sys.argv[2],corr,delimiter=',')
 #find max
 print(np.amax(corr))
 print(find_index(corr))
