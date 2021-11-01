@@ -11,9 +11,9 @@ cross-correlation-fft.py: computing cross-correlation with fft
 
 usage: python3 plot_csv.py signals.csv
 
-usage: python3 cross-correlation-numpy.py signals.csv
+usage: python3 cross-correlation-numpy.py signals.csv output.csv
 
-usage: python3 cross-correlation-fft.py signals.csv
+usage: python3 cross-correlation-fft.py signals.csv output.csv
 
 graphs of two signals:
 
